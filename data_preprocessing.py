@@ -45,7 +45,7 @@ def Get_Time_Series(data, location, direction, dates=False):
     #location and direction are strings
     extract = data.loc[data.location_name == location][data.Direction == direction]
     volume = extract['Volume']
-    if dates == False:
+    if not dates:
         return volume.to_numpy()
     else:
         #we will need this part later for the plots
